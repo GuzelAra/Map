@@ -1,39 +1,25 @@
 
+import java.io.IOException;
 import java.security.Key;
 import java.util.*;
 
 public class Main {
 
-    public static void main(String[] args) {
-/**
- * Есть текст. Нужно извлечь из него все слова и отсортировать по длине.
- * Мороз и солнце день чудесный Еще ты дремлешь друг прелестный Пора красавица проснись
- *
- * и
- * ты
- * Еще
- * день друг Пора
- * ..
- *
- */
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
 
-        String text = "Мороз и солнце день чудесный Еще ты дремлешь друг прелестный Пора красавица проснись";
+        Person person1 = new Person("Anna","Ivanova",34, "female", "Moscow");
+        Person person2 = new Person("Anna","Ivanova",34, "female", "Moscow");
 
-        String[] words = text.split(" ");
-        Map<Integer, List<String>> stats = new HashMap<>();
 
-        for (int i = 0; i < words.length; i++) {
-            ArrayList<String> list = new ArrayList<>();
-            for (String s : words) {
-                if (words[i].length() == s.length()) {
-                    list.add(s);
-                }
-            }
-            stats.put(words[i].length(), list);
-        }
+        System.out.println(person1 == person2);
+        System.out.println(person1.equals(person2));
 
-        for (List<String> s : stats.values()) {
-            System.out.println(s);
-        }
+        System.out.println(person1.hashCode());
+        System.out.println(person2.hashCode());
+
+
     }
+
+
 }
+
