@@ -8,6 +8,7 @@ public class Person {
     private String sex;
     private String city;
 
+
     public Person(String personName, String personSurname, int personAge, String personSex, String personCity) {
         name = personName;
         surname = personSurname;
